@@ -36,7 +36,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func deleteButtonDidTouch(_ sender: Any) {
-        let alert = UIAlertController(title:"エラー", message: "本当に削除してもいい？", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title:"確認", message: "本当に削除してもいい？", preferredStyle: UIAlertControllerStyle.alert)
 
         let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (action: UIAlertAction!) in
