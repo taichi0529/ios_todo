@@ -33,9 +33,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="たすく" id="u2q-u8-T6l">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="n4F-cH-wtV">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aiy-5k-qDk">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -44,15 +41,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="UIF-QR-oDP" kind="show" identifier="ShowToEditViewController" id="Pg0-w0-n8W"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwe-nc-Bc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="732" y="90"/>
         </scene>
-        <!--タスクを追加しよう-->
+        <!--追加-->
         <scene sceneID="nBw-Zw-fof">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RfA-MB-tqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bIt-si-fhJ" customClass="AddViewController" customModule="task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F9x-At-XCX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -76,7 +75,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Sv4-9t-4SG"/>
                     </view>
-                    <navigationItem key="navigationItem" title="タスクを追加しよう" id="tsH-7n-OKX">
+                    <navigationItem key="navigationItem" title="追加" id="tsH-7n-OKX">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="SsB-Lb-k1T">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -85,11 +84,58 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="textField" destination="ICV-Ak-1tu" id="9IU-hS-ZEP"/>
+                        <outlet property="labelTitle" destination="ICV-Ak-1tu" id="2id-P3-51z"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RfA-MB-tqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1448.8" y="89.505247376311857"/>
+        </scene>
+        <!--編集-->
+        <scene sceneID="9Ou-Ky-2Gp">
+            <objects>
+                <viewController id="UIF-QR-oDP" customClass="EditViewController" customModule="task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qIL-iA-LoS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-er-sT9">
+                                <rect key="frame" x="34" y="237" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-z5-gBN">
+                                <rect key="frame" x="310" y="430" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="削除">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonDidTouch:" destination="UIF-QR-oDP" eventType="touchUpInside" id="C2A-iK-1vP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dgV-xu-3t1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="編集" id="n41-LF-Abs">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="mNy-d7-UbZ">
+                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveButtonDidTouch:" destination="UIF-QR-oDP" id="oWA-V0-YeB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="labelTitle" destination="IMR-er-sT9" id="RGh-ng-7yp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0HB-80-cX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1573.5999999999999" y="920.68965517241384"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j15-tD-P6x">

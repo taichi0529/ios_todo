@@ -51,7 +51,17 @@ class TaskListTableViewController: UITableViewController {
         return cell
     }
     
-    
+    //セルの選択
+    override func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
+        taskCollection.selectedRow = indexPath.row
+        performSegue(withIdentifier: "ShowToEditViewController",sender: nil)
+    }
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "ShowToEditViewController") {
+
+        }
+    }
     
     
 
