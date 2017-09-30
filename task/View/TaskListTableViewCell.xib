@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HiraginoKakuGothic.ttc">
+            <string>HiraginoSans-W6</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomTableViewCell" rowHeight="71" id="KGk-i7-Jjw" customClass="TaskListTableViewCell" customModule="task" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOSの企画を作る" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTR-4d-iH3">
+                        <rect key="frame" x="18" y="8" width="286" height="17"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1日1人に相談する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXS-ph-wCE">
+                        <rect key="frame" x="40" y="35" width="272" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mts-mg-4OF">
+                        <rect key="frame" x="214" y="2" width="102" height="66"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="uXS-ph-wCE" secondAttribute="trailing" constant="8" id="6tR-Rl-3QQ"/>
+                    <constraint firstItem="JTR-4d-iH3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="7GU-b2-ad1"/>
+                    <constraint firstItem="uXS-ph-wCE" firstAttribute="top" secondItem="JTR-4d-iH3" secondAttribute="bottom" constant="10" id="H7k-jV-YAG"/>
+                    <constraint firstItem="uXS-ph-wCE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="gNw-sP-jrT"/>
+                    <constraint firstItem="JTR-4d-iH3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="mt8-KJ-Yz8"/>
+                    <constraint firstItem="Mts-mg-4OF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="plk-lj-NGH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="JTR-4d-iH3" secondAttribute="trailing" constant="8" id="tad-33-L8W"/>
+                    <constraint firstAttribute="trailing" secondItem="Mts-mg-4OF" secondAttribute="trailing" id="yQR-Fz-f00"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageHoge" destination="Mts-mg-4OF" id="0Yh-6z-Y9P"/>
+                <outlet property="labelDescript" destination="uXS-ph-wCE" id="F2s-aB-jlJ"/>
+                <outlet property="labelTitle" destination="JTR-4d-iH3" id="7FN-ct-npb"/>
+            </connections>
+            <point key="canvasLocation" x="172" y="87.5"/>
+        </tableViewCell>
+    </objects>
+</document>
